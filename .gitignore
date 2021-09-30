@@ -1,7 +1,16 @@
-*.ss~
-*.ss#*
-.#*.ss
+### Racket ###
+# gitignore template for the Racket language
+# website: http://www.racket-lang.org/
 
-*.scm~
-*.scm#*
-.#*.scm
+# DrRacket autosave files
+*.rkt~
+*.rkt.bak
+\#*.rkt#
+\#*.rkt#*#
+
+# Compiled racket bytecode
+compiled/
+*.zo
+
+# Dependency tracking files
+*.dep
