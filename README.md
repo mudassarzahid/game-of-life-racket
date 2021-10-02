@@ -23,9 +23,9 @@ To get a local copy up and running follow these simple steps.
 ### Game Controls
 Press the following buttons to trigger Key-Events
 - `Return`: Restart game with another randomly generated grid
-- `Q`: Quit game
 - `Spacebar`: Pause game
 - `R`: Restart game with a (cool-looking) predefined pattern
+- `Q`: Quit game
 
 
 ### Usage example
