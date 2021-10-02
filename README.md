@@ -13,7 +13,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Install [DrRacket IDE](https://racket-lang.org/)
+1. Install [DrRacket](https://racket-lang.org/)
 2. Clone the repo
    ```sh
    git clone git@github.com:mudassarzahid/game-of-life-racket.git
