@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone git@github.com:mudassarzahid/game-of-life-racket.git
    ```
-3. Run `game-of-life.rkt`
+3. Run `game-of-life.rkt` in DrRacket
 
 ### Game Controls
 Press the following buttons to trigger Key-Events
@@ -28,7 +28,7 @@ Press the following buttons to trigger Key-Events
 - `Q`: Quit game
 
 
-### Usage example
+### Usage Example
 <div align="center">
 <img src="images/example.gif" height="50%" width="50%" alt="example">
 </div>
