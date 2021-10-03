@@ -15,11 +15,14 @@
 (define (alives wrld)
   (third wrld))
 
-; Size of a cell (n pixels)
+; Size of a cell (m pixels)
 (define CELL-SIZE 20)
 
-; Size of grid (n*n cells)
+; Size of grid (n*n cells), change the number for a smaller/bigger grid
 (define GRID-SIZE 30)
+
+; Length of a grid row (n*m pixels)
+(define ROW-LENGTH (* GRID-SIZE CELL-SIZE))
 
 ; Custom-made colors
 (define GREEN (color 182 238 49))
@@ -47,13 +50,13 @@
 ; Rendering function
 ; WorldState --> Image
 (define (render wrld)
+  (let ([alives_length (round (* (/ (alives wrld) (* GRID-SIZE GRID-SIZE)) ROW-LENGTH))])
     (above
      (overlay/align 'left 'middle (text (~v (alives wrld)) 16 'black)
-                    (beside
-                     (rectangle                            (alives wrld)  CELL-SIZE 'solid GREEN)
-                     (rectangle (- (* GRID-SIZE CELL-SIZE) (alives wrld)) CELL-SIZE 'solid GREY)))
+                    (beside/align 'center (rectangle alives_length CELL-SIZE 'solid GREEN)
+                                  (rectangle (- ROW-LENGTH alives_length) CELL-SIZE 'solid GREY)))
      (rectangle (alives wrld) 4 'solid 'transparent)
-     (draw-grid (grid wrld))))
+     (draw-grid (grid wrld)))))
 
 ; Draw binary grid
 ; Binary Grid --> Image
@@ -144,7 +147,7 @@
 ; WorldState --> Image
 (define (last-image wrld)
   (overlay
-   (text/font "Thanks for playing! :)" 48 "black" "Montserrat" 'swiss 'normal 'bold #f)
+   (text/font "Thanks for playing! :)" (round (* GRID-SIZE 1.5)) "black" "Montserrat" 'swiss 'normal 'bold #f)
    (rectangle (* CELL-SIZE GRID-SIZE) (+ 24 (* CELL-SIZE GRID-SIZE)) 'solid (color 255 255 255 120))
    (render wrld)))
 
